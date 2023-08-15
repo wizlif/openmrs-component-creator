@@ -1,0 +1,37 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>io.github.wizlif.mets.openmrs-component-creator</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>OpenMRS Component Creator</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="wizlif@duck.com" url="https://wizlif.github.io">Wizlif Studios</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>The OpenMRS React Component Creator Plugin for IntelliJ IDEA is a powerful tool that enhances your development workflow when building user interfaces for OpenMRS applications using React. This plugin streamlines the process of creating React components, allowing developers to focus on writing clean and efficient code rather than boilerplate setup.</description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <group id="org.intellij.sdk.action.GroupedActions"
+               text="OpenMRS"
+               popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" />
+            <action id="io.github.wizlif.mets.mets.actions.CreateComponent" class="io.github.wizlif.mets.mets.actions.CreateComponent" text="Create Component"/>
+            <action id="io.github.wizlif.mets.mets.actions.CreateFileComponent" class="io.github.wizlif.mets.mets.actions.CreateFileComponent" text="Create File Component"/>
+        </group>
+    </actions>
+</idea-plugin>
